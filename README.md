@@ -3,7 +3,6 @@
 Live Demo Link
 https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/
 
-Live Demo Link https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/
 
 A Next.js application for patient registration with local database storage using PGlite.
 
