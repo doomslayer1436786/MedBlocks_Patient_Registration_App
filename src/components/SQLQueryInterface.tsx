@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { getDB } from '@/lib/db';
 
+interface QueryResult {
+  [key: string]: string | number | boolean | null | Date;
+}
+
 export default function SQLQueryInterface() {
   const [query, setQuery] = useState('SELECT * FROM patients');
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<QueryResult[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -13,7 +17,7 @@ export default function SQLQueryInterface() {
     try {
       const db = getDB();
       const result = await db.query(query);
-      setResults(result.rows || []);
+      setResults(result.rows as QueryResult[]);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred while executing the query');
       setResults([]);
@@ -84,7 +88,7 @@ export default function SQLQueryInterface() {
                   <tbody className="divide-y divide-gray-200 bg-white">
                     {results.map((row, rowIndex) => (
                       <tr key={rowIndex}>
-                        {Object.values(row).map((value: any, colIndex) => (
+                        {Object.values(row).map((value, colIndex) => (
                           <td
                             key={colIndex}
                             className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
