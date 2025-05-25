@@ -1,5 +1,8 @@
 # Patient Registration App
 
+Live Demo Link
+https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/
+
 A frontend-only patient registration application built with Next.js and PGlite. This application allows users to register new patients and manage their records using a browser-based SQL database.
 
 ## Features
