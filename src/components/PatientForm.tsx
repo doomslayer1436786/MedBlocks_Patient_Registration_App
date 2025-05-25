@@ -56,7 +56,7 @@ export default function PatientForm() {
             type="text"
             id="first_name"
             {...register('first_name')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           />
           {errors.first_name && (
             <p className="mt-1 text-sm text-red-600">{errors.first_name.message}</p>
@@ -71,7 +71,7 @@ export default function PatientForm() {
             type="text"
             id="last_name"
             {...register('last_name')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           />
           {errors.last_name && (
             <p className="mt-1 text-sm text-red-600">{errors.last_name.message}</p>
@@ -86,7 +86,7 @@ export default function PatientForm() {
             type="date"
             id="date_of_birth"
             {...register('date_of_birth')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           />
           {errors.date_of_birth && (
             <p className="mt-1 text-sm text-red-600">{errors.date_of_birth.message}</p>
@@ -100,7 +100,7 @@ export default function PatientForm() {
           <select
             id="gender"
             {...register('gender')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           >
             <option value="">Select gender</option>
             <option value="male">Male</option>
@@ -120,7 +120,7 @@ export default function PatientForm() {
             type="tel"
             id="contact_number"
             {...register('contact_number')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           />
           {errors.contact_number && (
             <p className="mt-1 text-sm text-red-600">{errors.contact_number.message}</p>
@@ -135,7 +135,7 @@ export default function PatientForm() {
             type="email"
             id="email"
             {...register('email')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           />
           {errors.email && (
             <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -150,7 +150,7 @@ export default function PatientForm() {
             id="address"
             {...register('address')}
             rows={3}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           />
           {errors.address && (
             <p className="mt-1 text-sm text-red-600">{errors.address.message}</p>
@@ -165,7 +165,7 @@ export default function PatientForm() {
             id="medical_history"
             {...register('medical_history')}
             rows={4}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
           />
           {errors.medical_history && (
             <p className="mt-1 text-sm text-red-600">{errors.medical_history.message}</p>

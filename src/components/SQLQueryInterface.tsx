@@ -36,7 +36,7 @@ export default function SQLQueryInterface() {
           <textarea
             id="query"
             rows={4}
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-gray-900"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
