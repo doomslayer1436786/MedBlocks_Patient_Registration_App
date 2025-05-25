@@ -1,10 +1,8 @@
 # Patient Registration App
 
-A Next.js application for patient registration with local database storage using PGlite.
+Live Demo Link https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/
 
-## Live Demo
-The application is deployed and accessible at:
-[https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/](https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/)
+A Next.js application for patient registration with local database storage using PGlite.
 
 ## Features
 - Patient registration with form validation
