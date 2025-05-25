@@ -1,147 +1,64 @@
 # Patient Registration App
 
-A frontend-only patient registration application built with Next.js and PGlite. This application allows users to register new patients and manage their records using a browser-based SQL database.
+A Next.js application for patient registration with local database storage using PGlite.
+
+## Live Demo
+The application is deployed and accessible at:
+[https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/](https://med-blocks-patient-regis-git-c7eccd-doomslayer1436786s-projects.vercel.app/)
 
 ## Features
-
-- 🏥 Patient registration with form validation
-- 📊 Raw SQL query interface for data exploration
-- 💾 Data persistence using PGlite with IndexedDB storage
-- 🔄 Cross-tab synchronization
-- 📱 Responsive design with Tailwind CSS
-- ✨ Modern UI with accessible components
-
-## Tech Stack
-
-- **Framework**: [Next.js 14](https://nextjs.org/)
-- **Database**: [PGlite](https://electric-sql.com/docs/usage/pglite) (Browser-based PostgreSQL)
-- **State Management**: [TanStack Query](https://tanstack.com/query/latest)
-- **Form Handling**: [React Hook Form](https://react-hook-form.com/)
-- **Validation**: [Zod](https://zod.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Components**: [Headless UI](https://headlessui.com/)
-
-## Prerequisites
-
-- Node.js 18.17 or later
-- npm 9.6.7 or later
+- Patient registration with form validation
+- Local database storage using PGlite
+- SQL query interface for data exploration
+- Cross-tab synchronization
+- Responsive design with Tailwind CSS
 
 ## Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd patient-registration-app
-   ```
+### Prerequisites
+- Node.js 18.x or later
+- npm or yarn package manager
 
+### Installation
+1. Clone the repository
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+# or
+yarn install
+```
 
 3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
-
-## Database Schema
-
-The application uses a simple patient schema:
-
-```sql
-CREATE TABLE IF NOT EXISTS patients (
-  id SERIAL PRIMARY KEY,
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL,
-  date_of_birth DATE NOT NULL,
-  gender TEXT NOT NULL,
-  contact_number TEXT NOT NULL,
-  email TEXT,
-  address TEXT,
-  medical_history TEXT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-## Usage
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### Patient Registration
+## Technical Stack
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS
+- PGlite for local database
+- React Query
+- React Hook Form with Zod validation
 
-1. Navigate to the "Register Patient" tab
-2. Fill in the required patient information:
-   - First Name
-   - Last Name
-   - Date of Birth
-   - Gender
-   - Contact Number
-   - Email (optional)
-   - Address (optional)
-   - Medical History (optional)
-3. Submit the form
+## Challenges and Solutions
 
-### Query Records
+### Deployment Challenges
+One significant challenge faced during deployment was related to Vercel's region configuration. Initially, the application was configured to deploy to all regions (`"regions": ["all"]` in vercel.json), which is a feature restricted to Pro and Enterprise plans. This was resolved by:
 
-1. Navigate to the "Query Records" tab
-2. Enter your SQL query in the text area
-3. Click "Execute Query" to see the results
-4. Results will be displayed in a table format below the query interface
+1. Identifying the limitation in the free tier
+2. Modifying the deployment configuration to use a single region (US East - iad1)
+3. Updating vercel.json to optimize for the target audience
+4. Successfully deploying to a single region while maintaining good performance
 
-Example queries:
-```sql
--- Get all patients
-SELECT * FROM patients;
-
--- Find patients by name
-SELECT * FROM patients WHERE first_name LIKE '%John%';
-
--- Get recent registrations
-SELECT * FROM patients ORDER BY created_at DESC LIMIT 5;
-```
-
-## Data Persistence
-
-The application uses PGlite with IndexedDB for data storage, which means:
-- Data persists across page refreshes
-- Data is synchronized across multiple tabs in the same browser
-- Data is stored locally in the browser's IndexedDB storage
-
-## Development
-
-### Project Structure
-
-```
-src/
-├── app/                 # Next.js app directory
-│   ├── layout.tsx      # Root layout
-│   └── page.tsx        # Main page
-├── components/         # React components
-│   ├── PatientForm.tsx
-│   └── SQLQueryInterface.tsx
-└── lib/               # Utilities
-    ├── db.ts          # Database configuration
-    └── validations.ts # Form validations
-```
-
-### Adding New Features
-
-1. Create new components in the `components` directory
-2. Add new database operations in `lib/db.ts`
-3. Add new validations in `lib/validations.ts`
-4. Update the UI in `app/page.tsx`
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+This experience highlighted the importance of understanding platform limitations and making appropriate adjustments to deployment configurations.
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
